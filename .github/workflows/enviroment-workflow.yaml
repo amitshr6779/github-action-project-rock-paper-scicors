@@ -10,7 +10,7 @@ jobs:
     name: Deploy to test
     environment:
       name: Test
-    if: github.event.ref == 'refs/heads/test'
+    if: github.event.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to testing using ${{ secrets.mysecret }}
@@ -19,7 +19,7 @@ jobs:
     name: Deploy to dev
     environment:
       name: dev
-    if: github.event.ref == 'refs/heads/main'
+    if: github.event.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - run: echo Deploy to staging using ${{ secrets.mysecret }}
