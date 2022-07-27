@@ -39,6 +39,15 @@ jobs:
         with:
           name: github-actions-artifact
           path: staging
+      - name: create relese
+        id: relese_id
+        uses: actions/create-relese@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: $${{ github.run_number }}
+          release_name: Release $${{ github.run_number }}
+          
         
 
 
