@@ -41,7 +41,7 @@ jobs:
           path: staging
       - name: create relese
         id: relese_id
-        uses: actions/create-relese@v1
+        uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
