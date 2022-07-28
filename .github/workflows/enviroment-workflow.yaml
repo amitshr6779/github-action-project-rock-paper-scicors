@@ -20,7 +20,8 @@ jobs:
     environment:
       name: dev
     if: github.event.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: echo Deploy to staging using ${{ secrets.mysecret }}
         
@@ -29,6 +30,7 @@ jobs:
     environment:
       name: prod
     needs: [deploy-staging]
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - run: echo Deploy to production using ${{ secrets.mysecret }}
